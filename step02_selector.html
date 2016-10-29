@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>selector</title>
+	<script src="./js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+	<div>div1</div>
+<div class="myGroup">div2</div>
+<div class="myGroup">div3</div>
+<div class="myGroup">div4</div>
+<div id="one">div5</div>
+<input type="text" id="input1"/>
+<input type="text" id="input2"/>
+<button id="myBtn">눌러보셈</button>
+<script>
+	// jQuery 요소명 선택자 
+	$("div").css("background-color","yellow");
+
+	// jQuery 클래스 선택자 
+	$(".myGroup").text("text 가 문서 로딩 시점에 조작됨");
+
+	// jQuery 아이디 선택자 
+	$("#input1").val("value 넣어줌");
+	// id 가 myBtn 인 요소에 click 이벤트가 일어났을때 실행할 함수 등록
+	$("#myBtn").click(function(){
+		$("#one").text("김구라").css("color","blue");
+	});
+</script>
+</body>
+</html>

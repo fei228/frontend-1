@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>eventListener</title>
+</head>
+<body>
+	<button id="myBtn">눌러보셈</button>
+	<ul id="msgList">
+		<li>li1</li>
+		<li>li2</li>
+		<li>li3</li>
+		<li>li4</li>
+		<li>li5</li>
+	</ul>
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script>
+		// $(선택자).on(이벤트명, 리스너 함수 );
+		$("#myBtn").on("click", function(){
+			alert("버튼을 눌렀네요?");
+		});
+
+		// 아이디가 msgList 인 요소의 하위 요소중에서 li 를 선택하고
+		// 그 요소에 click 이라는 이벤트가 일어났을때 호출할 함수 등록 
+		$("#msgList li").on("click", function(){
+			//$("#msgList li").text("클릭된 li 입니다.");
+			/*
+				click 이벤트가 일어난 요소의 참조값 : this
+				this 를 jQuery 선택자로 선택 : $(this)
+				$(this) 하면 모든 jQuery 의 기능을 사용할수 있다. 
+			*/
+			$(this).text("클릭된 li 입니다.");
+		});
+
+	</script>	
+</body>
+</html>

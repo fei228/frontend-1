@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step04_Example.html</title>
+	<style>
+		#header ul{
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+		#header ul li{
+			float: left;
+			border: 1px solid #000;
+			margin-left: 0.5em;
+			border-bottom-width: 0;
+			background-color: #fff;
+		}
+		/* 활성화된 텝을 표시하기 위한 css*/
+		.selected{
+			position: relative;
+			top: 1px;
+		}
+
+		#header ul li a{
+			text-decoration: none;
+			color: #000;
+			display: block;
+			padding: 0 1em;
+		}
+		#content{
+			clear: left;
+			border: 1px solid #000;
+		}
+		/* 모든 텝 컨텐츠를 숨겨 놓고 */
+		#content p{
+			display: none;
+		}
+		/* 첫번째 컨텐츠만 보이도록 해 놓는다.*/
+		#content #one{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+<div id="header">
+	<h3>기본 Tab 테스트</h3>
+	<ul>
+		<li class="selected"><a href="#one">하나</a></li>
+		<li><a href="#two">두울</a></li>
+		<li><a href="#three">세엣</a></li>
+		<li><a href="#four">네엣</a></li>
+	</ul>
+</div>
+<div id="content">
+	<p id="one">One Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates facere ullam iusto, dolore eius quisquam animi nobis exercitationem porro enim, placeat possimus. Beatae in eos aliquid quam odit adipisci porro.</p>
+	<p id="two">Two Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates facere ullam iusto, dolore eius quisquam animi nobis exercitationem porro enim, placeat possimus. Beatae in eos aliquid quam odit adipisci porro.</p>
+	<p id="three">Three Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates facere ullam iusto, dolore eius quisquam animi nobis exercitationem porro enim, placeat possimus. Beatae in eos aliquid quam odit adipisci porro.</p>
+	<p id="four">Four Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates facere ullam iusto, dolore eius quisquam animi nobis exercitationem porro enim, placeat possimus. Beatae in eos aliquid quam odit adipisci porro.</p>
+</div>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+	/*
+		- hint 
+
+		.parent() 
+	*/
+	$("#header a").on("click", function(e){
+		
+		//1. 이벤트가 일어난 요소를 선택 
+		$(this)
+		.parent()                  //2. 부모요소 선택 
+		.addClass("selected")      //3. selected 클래스 추가
+		.siblings()                //4. 형제요소 선택 
+		.removeClass("selected");  //5. selected 클래스 제거 
+
+		//클릭한 a 요소의 href 속성의 value 값을 읽어온다.
+		var sel = $(this).attr("href");
+		//보여주어야 될 p 요소 선택 
+		$(sel)
+		.css("display", "block")
+		.siblings()
+		.css("display", "none");
+
+	});
+</script>		
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+	<input type="text"/>
+	<input type="checkbox"/>
+	<input type="radio"/>
+	<input type="text" name="email"/>
+	<input type="text" name="pwd"/>
+	<script>
+		$("[type=text]").css("background-color","yellow");
+		$("[type=checkbox]").prop("checked", true);
+
+		$("[name=email]").val("aaa@naver.com");
+		$("input[name=pwd]").val("1234");
+	</script>	
+</body>
+</html>

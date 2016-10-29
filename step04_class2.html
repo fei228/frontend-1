@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step04_Class2.html</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+			cursor: pointer;
+		}
+		.active{
+			background-color: yellow;
+			border-width: 5px;
+		}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<div class="box active"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+</div>
+<script src="./js/jquery-3.1.1.min.js"></script>
+<script>
+	$(".box").on("click", function(){
+		//$(".box").removeClass("active");
+		$(this).addClass("active").siblings().removeClass("active");
+	});
+</script>	
+</body>
+</html>

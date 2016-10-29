@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step01_Example.html</title>
+	<script src="./js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<input type="text" id="inputMsg"/>
+<button id="sendBtn">전송</button>
+<ul id="msgList">
+	
+</ul>
+<script>
+	// //버튼을 눌럿을때 호출되는 함수 등록
+	// document.querySelector("#sendBtn")
+	// .addEventListener("click", function(){
+	// 	//입력한 문자열 읽어오기
+	// 	var msg = document.querySelector("#inputMsg").value;
+	// 	//li 문서 객체를 만든다.
+	// 	var li = document.createElement("li");
+	// 	li.innerText=msg;
+	// 	// ul 요소에 추가
+	// 	document.querySelector("#msgList").appendChild(li);
+	// });
+
+	// #sendBtn 인 요소에 click 이벤트가 일어 났을때 실행할 함수 등록 
+	$("#sendBtn").on("click", function(){
+		//입력한 문자열을 읽어온다.
+		var msg = $("#inputMsg").val();
+		//li 요소를 만들고 text 를 출력한후 
+		var li = $("<li/>").text(msg);
+		// #msgList 인 요소에 추가한다. 
+		$("#msgList").append(li);
+	});
+</script>	
+</body>
+</html>

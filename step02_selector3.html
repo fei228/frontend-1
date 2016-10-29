@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>div1</div>
+	<div>div2</div>
+	<div>div3</div>
+	<div>div4</div>
+	<div>div5</div>
+	<div>div6</div>
+	<div>div7</div>
+	<div>div8</div>
+	<div>div9</div>
+	<div>div10</div>
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script>
+		// div 요소중에서 짝수 인덱스 선택해서 동작 
+		$("div:even").css("background-color","yellow");
+
+		// div 요소중에서 홀수 인덱스 선택해서 동작 
+		$("div:odd").css("background-color","pink");
+
+		// 3번째 인덱스 선택후 동작 
+		$("div:eq(3)").css("color","blue");
+
+		// 첫번째 인덱스 선택후 동작 
+		$("div:first").css("font-size","30px");
+		// 마지막 번째 인덱스 선택후 동작 
+		$("div:last").css("font-style","italic");
+</script>
+</body>
+</html>

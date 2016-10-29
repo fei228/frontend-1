@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step03_Example.html</title>
+	<style>
+		.box{
+			width: 500px;
+			height: 300px;
+			border: 1px solid red;
+			margin: 0 auto;
+		}
+		#myConsole{
+			background-color: #000;
+			width: 500px;
+			height: 300px;
+			overflow-y: scroll;
+			margin: 0 auto;
+		}
+		#myConsole p{
+			font-weight: bold;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+<div class="box"></div>
+<div id="myConsole"></div>
+<script src="./js/jquery-3.1.1.min.js"></script>
+<script>
+	$(".box").on("mousedown", function(e){
+		//이벤트가 일어난 곳의 좌표를 얻어온다. 
+		var eventX=e.offsetX;
+		var eventY=e.offsetY;
+		//출력할 문자열을 구성한다. 
+		var info = "mousedown ! x : "+eventX+" y : "+eventY;
+
+		// p 요소를 동적으로 만들어서 선택후  
+		$("<p/>")
+		.text(info) //text 출력 
+		.appendTo("#myConsole"); //id 가 myConsole 인 요소에 추가 
+
+		//가장 아래쪽으로 스크롤 시키기 
+		$("#myConsole").scrollTop(9999999);
+	});
+	$(".box").on("mousemove", function(e){
+		//이벤트가 일어난 곳의 좌표를 얻어온다. 
+		var eventX=e.offsetX;
+		var eventY=e.offsetY;
+		//출력할 문자열을 구성한다. 
+		var info = "mousemove ! x : "+eventX+" y : "+eventY;
+
+		// p 요소를 동적으로 만들어서 선택후  
+		$("<p/>")
+		.text(info) //text 출력 
+		.appendTo("#myConsole"); //id 가 myConsole 인 요소에 추가 
+
+		//가장 아래쪽으로 스크롤 시키기 
+		$("#myConsole").scrollTop(9999999);
+	});
+	$(".box").on("mouseup", function(e){
+		//이벤트가 일어난 곳의 좌표를 얻어온다. 
+		var eventX=e.offsetX;
+		var eventY=e.offsetY;
+		//출력할 문자열을 구성한다. 
+		var info = "mouseup ! x : "+eventX+" y : "+eventY;
+
+		// p 요소를 동적으로 만들어서 선택후  
+		$("<p/>")
+		.text(info) //text 출력 
+		.appendTo("#myConsole"); //id 가 myConsole 인 요소에 추가 
+
+		//가장 아래쪽으로 스크롤 시키기 
+		$("#myConsole").scrollTop(9999999);
+	});
+	$(".box").on("mouseover", function(){
+		
+		//출력할 문자열을 구성한다. 
+		var info = "mouseover !";
+
+		// p 요소를 동적으로 만들어서 선택후  
+		$("<p/>")
+		.text(info) //text 출력 
+		.appendTo("#myConsole"); //id 가 myConsole 인 요소에 추가 
+
+		//가장 아래쪽으로 스크롤 시키기 
+		$("#myConsole").scrollTop(9999999);
+	});
+	$(".box").on("mouseout", function(){
+		
+		//출력할 문자열을 구성한다. 
+		var info = "mouseout !";
+
+		// p 요소를 동적으로 만들어서 선택후  
+		$("<p/>")
+		.text(info) //text 출력 
+		.appendTo("#myConsole"); //id 가 myConsole 인 요소에 추가 
+
+		//가장 아래쪽으로 스크롤 시키기 
+		$("#myConsole").scrollTop(9999999);
+	});
+</script>	
+</body>
+</html>
