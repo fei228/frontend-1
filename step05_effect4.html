@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step05_Effect4.html</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+			background-color: #c3c3c3;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	
+</div>
+<button id="myBtn">눌러보셈</button>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+	/*
+		1. 버튼을 눌렀을때 <div class="box"></box> 
+		형태의 div 요소를 만들어서 .container 에 추가 해보세요
+
+		- hint
+		addClass()
+		appendTo()
+
+		2. div 가 추가 될때 fadeIn() 을 적용해 보세요
+
+		3. fadeIn 를 1초동안 적용시키고 1초 이후에 div 의 배경색을 
+		yellow 로 바꿔 보세요.
+
+	*/
+
+	$("#myBtn").click(function(){
+		$("<div/>")
+		.addClass("box")
+		.appendTo(".container")
+		.hide()
+		.fadeIn(1000, function(){
+			$(this).css("background-color","yellow");
+		});
+	});
+</script>	
+</body>
+</html>

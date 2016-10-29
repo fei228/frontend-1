@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step06_CustomEffect2.html</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+<button id="leftBtn">&larr;</button>
+<button id="rightBtn">&rarr;</button>
+<div class="box"></div>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+	$("#leftBtn").click(function(){
+		//$(".box").css("margin-left","0px");
+		$(".box").animate({
+			"margin-left":"-=100px"
+		}, 1000);
+	});
+	$("#rightBtn").click(function(){
+		//$(".box").css("margin-left","100px");
+		$(".box").animate({
+			"margin-left":"+=100px"
+		}, 1000);
+	});
+</script>	
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step08_Quiz.html</title>
+	<style>
+		.wrapper{
+			border: 1px solid blue;
+			position: relative;
+			width: 1000px;
+			height: 500px;
+			overflow: hidden;
+		}	
+		.box{
+			width: 1000px;
+			height: 500px;
+			border: 1px solid red;
+			position: absolute;
+		}
+		.box:nth-child(1){
+			top: 0;
+			left: 0;
+		}
+		.box:nth-child(2){
+			top: 0;
+			left: 1000px;
+		}
+		.box:nth-child(3){
+			top: 0;
+			left: 2000px;
+		}
+		.box:nth-child(4){
+			top: 0;
+			left: 3000px;
+		}
+		.box:nth-child(5){
+			top: 0;
+			left: 4000px;
+		}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<div class="box"><img src="images/top01.jpg"/></div>
+	<div class="box"><img src="images/top02.jpg"/></div>
+	<div class="box"><img src="images/top03.jpg"/></div>
+	<div class="box"><img src="images/top04.jpg"/></div>
+	<div class="box"><img src="images/top05.jpg"/></div>
+</div>
+<div class="btn-wrapper">
+	<button id="prevBtn">&larr;</button>
+	<button id="nextBtn">&rarr;</button>
+</div>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+	//현재 보고 있는 페이지 인덱스 
+	var currentIndex=0;
+
+	$("#prevBtn").click(function(){
+		if(currentIndex==0){
+			return;
+		}
+		$(".box").animate({
+			left: "+=1000px"
+		}, 1000);
+		//현재 인덱스 감소 시키기 
+		currentIndex--;
+	});
+	$("#nextBtn").click(function(){
+		if(currentIndex==4){
+			return;
+		}
+		$(".box").animate({
+			left: "-=1000px"
+		}, 1000);
+		//현재 인덱스 증가 시키기 
+		currentIndex++;
+	});
+</script>	
+</body>
+</html>

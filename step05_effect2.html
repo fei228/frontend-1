@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step05_Effect2.html</title>
+</head>
+<body>
+<button id="hideBtn">숨기기</button>
+<button id="showBtn">보이기</button>
+<button id="toggleBtn">토글</button>
+<br/>
+<img src="images/image1.png"/>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+	$("#hideBtn").on("click", function(){
+		// $("img").hide(1000, function(){
+		// 	alert("뿅!");
+		// });
+
+		// .hide() 동작을 할때 동작에 대한 option 을 {}로 전달하는 방법 
+		$("img").hide({
+			duration:1000,
+			complete:function(){
+				alert("뿅!");
+			}
+		});
+
+	});1
+	$("#showBtn").on("click", function(){
+		//$("img").css("display","inline");
+		$("img").show();
+	});
+	$("#toggleBtn").on("click", function(){
+		$("img").toggle();
+	});
+</script>	
+</body>
+</html>

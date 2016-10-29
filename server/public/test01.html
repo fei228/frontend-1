@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test01.html</title>
+</head>
+<body>
+	<h3>Ajax test</h3>
+	<form action="/send" method="post" id="msgForm">
+		<label for="msg">메세지</label>
+		<input type="text" id="msg" name="msg"/>
+		<button type="submit">전송</button>
+	</form>
+	<script src="./js/jquery-3.1.1.min.js"></script>
+	<script>
+		$("#msgForm").on("submit", function(){
+			var msg = $("#msg").val();
+			$.ajax({
+				url:"/send",
+				method:"post",
+				data:{msg:msg},
+				success:function(data){
+					alert(data);
+				}
+			});
+			// alert("submit!");
+
+			return false;
+		});
+	</script>
+</body>
+</html>

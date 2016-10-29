@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step06_CustomEffect3.html</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			border-width: 1px;
+			border-style: solid;
+			border-color: red;
+			opacity: 1.0; /* 투명도 */
+			font-size: 20px;
+			color: #fff;
+			background-color: #00f;
+		}
+	</style>
+</head>
+<body>
+<div class="box">ABCD</div>
+<div class="box">ABCD</div>
+<div class="box">ABCD</div>	
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+	$(".box").on("mouseover", function(){
+		$(this).stop().animate({
+			width:"500px",
+			height:"200px",
+			"border-width":"10px",
+			opacity:0.5,
+			"font-size":"40px"
+		}, 1000);
+	});
+	$(".box").on("mouseout", function(){
+		//원상 복구 해 보세요.
+		$(this).stop().animate({
+			width:"100px",
+			height:"100px",
+			borderWidth:"1px",
+			opacity:1.0,
+			fontSize:"20px"
+		}, 1000);
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>div1</div>
+	<div>div2</div>
+	<div>div3</div>
+	<div>div4</div>
+	<div>div5</div>
+	<script src="./js/jquery-3.1.1.min.js"></script>
+	<script>
+		var nums = [10,20,30,40,50];
+		// for(var i=0;i<nums.length;i++){
+		// 	console.log(nums[i]);
+		// }
+		$(nums).each(function(){
+			console.log(this);
+		});
+		$("div").each(function(){
+			// console.log(this);
+			$(this).css("color", "blue");
+		});
+	</script>
+</body>
+</html>
